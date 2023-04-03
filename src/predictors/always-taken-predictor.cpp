@@ -11,7 +11,7 @@ public:
         _misspredictions = 0;
     }
 
-    void predict(uint64_t mem_address, bool taken)
+    void predict(uint64_t program_counter, bool taken) override
     {
         ++_total_predictions;
         if (!taken) // if branch not taken
@@ -20,7 +20,7 @@ public:
         }
     }
 
-    std::string get_name() const
+    std::string get_name() const override
     {
         return "Always Taken predictor";
     }

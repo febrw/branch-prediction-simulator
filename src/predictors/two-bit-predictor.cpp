@@ -1,5 +1,6 @@
 #include "branch-predictor.hpp"
 #include <math.h>
+#include <iostream>
 
 class TwoBitPredictor : public BranchPredictor
 {
@@ -30,9 +31,9 @@ public:
 
     void initTable(uint64_t table_size)
     {
-        for (int i = 0; i < table_size; ++i)
+        for (uint64_t i = 0; i < table_size; ++i)
         {
-            _table[i] = WEAK_NOT_TAKEN;
+            _table[i] = STRONG_TAKEN;
         }
     }
 
@@ -41,62 +42,53 @@ public:
         delete[] _table;
     }
 
-    std::string get_name() const
+    std::string get_name() const override
     {
         return "Two-Bit predictor, PHT size " + std::to_string(_table_size);
     }
 
-    void predict(uint64_t mem_address, bool taken)
+    void predict(uint64_t program_counter, bool taken) override
     {
-        uint64_t index = mem_address << (64 - _bit_count) >> (64 - _bit_count); // keep bottom n bits only for table index
+        uint64_t index = program_counter & (_table_size - 1); // mask to keep bottom n bits only for table index
         State state = _table[index]; // get state
         ++_total_predictions;
-        switch (state)
-        {
-        case STRONG_NOT_TAKEN:
-            if (taken)
-            {
-                state = WEAK_NOT_TAKEN;
-                ++_misspredictions;
-            }
-            break;
+        switch (state) {
+            case STRONG_NOT_TAKEN:
+                if (taken) {
+                    state = WEAK_NOT_TAKEN;
+                    ++_misspredictions;
+                }
+                break;
 
-        case WEAK_NOT_TAKEN:
-            if (taken)
-            {
-                state = WEAK_TAKEN;
-                ++_misspredictions;
-            }
-            else
-            {
-                state = STRONG_NOT_TAKEN;
-            }
-            break;
+            case WEAK_NOT_TAKEN:
+                if (taken) {
+                    state = WEAK_TAKEN;
+                    ++_misspredictions;
+                } else {
+                    state = STRONG_NOT_TAKEN;
+                }
+                break;
 
-        case WEAK_TAKEN:
-            if (taken)
-            {
-                state = STRONG_TAKEN;
-            }
-            else
-            {
-                state = WEAK_NOT_TAKEN;
-                ++_misspredictions;
-            }
-            break;
+            case WEAK_TAKEN:
+                if (taken) {
+                    state = STRONG_TAKEN;
+                } else {
+                    state = WEAK_NOT_TAKEN;
+                    ++_misspredictions;
+                }
+                break;
 
-        case STRONG_TAKEN:
-            if (!taken)
-            {
-                state = WEAK_TAKEN;
-                ++_misspredictions;
-            }
-            break;
-        
-        default:
-            std::cout << "Should not be here.\n";
-            exit(0);
-            break;
+            case STRONG_TAKEN:
+                if (!taken) {
+                    state = WEAK_TAKEN;
+                    ++_misspredictions;
+                }
+                break;
+            
+            default:
+                std::cout << "Should not be here.\n";
+                exit(0);
+                break;
         }
     } 
 };

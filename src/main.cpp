@@ -10,6 +10,8 @@
 #include "predictors/two-bit-predictor.cpp"
 #include "predictors/always-taken-predictor.cpp"
 #include "predictors/gshare-predictor.cpp"
+#include "predictors/perceptron-predictor.cpp"
+
 
 
 int main(int argc, char * argv[])
@@ -30,7 +32,7 @@ int main(int argc, char * argv[])
 
 	// Branch Predictor setup
 
-	//BranchPredictor ** predictors = new BranchPredictor*[6];
+	//BranchPredictor ** predictors = new BranchPredictor*[6];leela.out
 	//BranchPredictor *always_taken = new AlwaysTakenPredictor();
 	//BranchPredictor *two_bit_512 = new TwoBitPredictor(512);
 	//BranchPredictor *two_bit_1024 = new TwoBitPredictor(1024);
@@ -46,7 +48,8 @@ int main(int argc, char * argv[])
 		new GSharePredictor(512),
 		new GSharePredictor(1024),
 		new GSharePredictor(2048),
-		new GSharePredictor(4096)
+		new GSharePredictor(4096),
+		new PerceptronPredictor(12, 1 << 14, 10)
 	};
 
 	// File reading loop
@@ -54,14 +57,14 @@ int main(int argc, char * argv[])
 	{
 		bool is_conditional_branch = *(data + counter + 38) == '1';
 		if (!is_conditional_branch) {counter += lineLength;}
-		auto mem_address = strtoul(data + counter, nullptr, 16); // string to unsigned long, from base 16
+		auto program_counter = strtoul(data + counter, nullptr, 16); // string to unsigned long, from base 16
 		bool taken = strtoul(data + counter + 40, nullptr, 10); // string to unsigned long, from base 10
 
 		// Run trace on always taken predictor
-		//bp -> predict(mem_address, taken);
+		//bp -> predict(program_counter, taken);
 		for (BranchPredictor * bp : predictors)
 		{
-			bp -> predict(mem_address, taken);
+			bp -> predict(program_counter, taken);
 		}
 
 		counter += lineLength;
