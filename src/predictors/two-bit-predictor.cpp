@@ -14,15 +14,18 @@ private:
 
     State * _table;
     uint64_t _bit_count;
+    uint64_t _table_size;
 
 public:
 
     TwoBitPredictor(uint64_t table_size)
     {
+        _table_size = table_size;
         _total_predictions = 0;
         _misspredictions = 0;
         _table = new State[table_size];
         _bit_count = static_cast<uint64_t>(log2(table_size));
+        initTable(table_size);
     }
 
     void initTable(uint64_t table_size)
@@ -38,15 +41,20 @@ public:
         delete[] _table;
     }
 
-    void predict(uint64_t mem_address, bool ground_truth)
+    std::string get_name() const
     {
-        uint64_t index = mem_address << (64 - _bit_count) >> (64 - _bit_count);
-        State state = _table[index];
+        return "Two-Bit predictor, PHT size " + std::to_string(_table_size);
+    }
+
+    void predict(uint64_t mem_address, bool taken)
+    {
+        uint64_t index = mem_address << (64 - _bit_count) >> (64 - _bit_count); // keep bottom n bits only for table index
+        State state = _table[index]; // get state
         ++_total_predictions;
         switch (state)
         {
         case STRONG_NOT_TAKEN:
-            if (ground_truth)
+            if (taken)
             {
                 state = WEAK_NOT_TAKEN;
                 ++_misspredictions;
@@ -54,7 +62,7 @@ public:
             break;
 
         case WEAK_NOT_TAKEN:
-            if (ground_truth)
+            if (taken)
             {
                 state = WEAK_TAKEN;
                 ++_misspredictions;
@@ -66,7 +74,7 @@ public:
             break;
 
         case WEAK_TAKEN:
-            if (ground_truth)
+            if (taken)
             {
                 state = STRONG_TAKEN;
             }
@@ -78,7 +86,7 @@ public:
             break;
 
         case STRONG_TAKEN:
-            if (!ground_truth)
+            if (!taken)
             {
                 state = WEAK_TAKEN;
                 ++_misspredictions;
@@ -86,6 +94,8 @@ public:
             break;
         
         default:
+            std::cout << "Should not be here.\n";
+            exit(0);
             break;
         }
     } 
