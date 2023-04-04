@@ -53,7 +53,7 @@ public:
         //print_test_stats(taken);
         uint64_t index = (program_counter << (64 - _bit_count) >> (64 - _bit_count)) ^ _global_history; // keep bottom n bits only for table index
 
-        State state = _table[index]; // get state
+        State& state = _table[index]; // get state
 
         ++_total_predictions; // increment prior to inspection, then increment misspredictions as they occur
 
@@ -97,7 +97,7 @@ public:
         }
         // update global history
         _global_history = ((_global_history << 1) | taken) & ((1 << _bit_count) - 1);
-        _table[index] = state;
+        //_table[index] = state;
     }
 
     void print_test_stats(bool taken) {

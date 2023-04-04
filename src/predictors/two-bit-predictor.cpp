@@ -50,7 +50,7 @@ public:
     void predict(uint64_t program_counter, bool taken) override
     {
         uint64_t index = program_counter & (_table_size - 1); // mask to keep bottom n bits only for table index
-        State state = _table[index]; // get state
+        State& state = _table[index]; // get state
         ++_total_predictions;
         switch (state) {
             case STRONG_NOT_TAKEN:
@@ -90,5 +90,6 @@ public:
                 exit(0);
                 break;
         }
+        //_table[index] = state;
     } 
 };

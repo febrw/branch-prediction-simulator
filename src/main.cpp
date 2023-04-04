@@ -11,6 +11,7 @@
 #include "predictors/always-taken-predictor.cpp"
 #include "predictors/gshare-predictor.cpp"
 #include "predictors/perceptron-predictor.cpp"
+#include "predictors/perceptron-predictor2.cpp"
 
 
 
@@ -19,7 +20,7 @@ int main(int argc, char * argv[])
 
 	// Path setup
     std::string traces_path("/cs/studres/CS4202/Coursework/P2-BranchPredictor/branch_traces/");
-    std::string path_to_trace_file = traces_path + "xz.out";
+    std::string path_to_trace_file = traces_path + "wrf.out";
 
 	// File reading setup
     struct stat sb;
@@ -45,18 +46,23 @@ int main(int argc, char * argv[])
 		new TwoBitPredictor(1024),
 		new TwoBitPredictor(2048),
 		new TwoBitPredictor(4096),
-		new GSharePredictor(512),
-		new GSharePredictor(1024),
-		new GSharePredictor(2048),
-		new GSharePredictor(4096),
-		new PerceptronPredictor(12, 1 << 14, 10)
+		//new GSharePredictor(512),
+		//new GSharePredictor(1024),
+		//new GSharePredictor(2048),
+		//new GSharePredictor(4096),
+		//new PerceptronPredictor(12, 1 << 14, 10),
+		new PerceptronBranchPredictor(12, 1 << 14, 10),
+		new PerceptronBranchPredictor(8, 1 << 12, 8),
 	};
 
 	// File reading loop
 	while (counter < sb.st_size)
 	{
 		bool is_conditional_branch = *(data + counter + 38) == '1';
-		if (!is_conditional_branch) {counter += lineLength;}
+		if (!is_conditional_branch) {
+			counter += lineLength;
+			continue;
+		}
 		auto program_counter = strtoul(data + counter, nullptr, 16); // string to unsigned long, from base 16
 		bool taken = strtoul(data + counter + 40, nullptr, 10); // string to unsigned long, from base 10
 
@@ -66,17 +72,18 @@ int main(int argc, char * argv[])
 		{
 			bp -> predict(program_counter, taken);
 		}
-
+		
 		counter += lineLength;
 	}
 
 	// Print after finish
 	for (BranchPredictor * bp : predictors)
-		{
-			std::cout << bp -> get_name() << "\n";
-			std::cout << "Accuracy: " << bp -> get_accuracy() << "\n";
-			std::cout << "Total Predictions: " << bp -> get_total_predictions() << "\n\n";
-		}
+	{
+		std::cout << bp -> get_name() << "\n";
+		std::cout << "Accuracy: " << bp -> get_accuracy() << "\n";
+		std::cout << "Total Misspredictions: " << bp -> get_misspredictions() << "\n";
+		std::cout << "Total Predictions: " << bp -> get_total_predictions() << "\n\n";
+	}
 	//std::cout << "Accuracy: " << bp -> get_accuracy() << "\n";
 	//std::cout << "Total Predictions: " << bp -> get_total_predictions() << "\n";
 }
