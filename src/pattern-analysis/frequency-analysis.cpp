@@ -9,6 +9,7 @@
 #include <errno.h>
 #include <unordered_map>
 #include <vector>
+#include <stdint.h>
 
 #include "../include/json.hpp"
 using json = nlohmann::json;
@@ -21,7 +22,6 @@ typedef struct {
 
 int main(int argc, char * argv[])
 {
-
 	// Path setup
     std::string traces_path("/cs/studres/CS4202/Coursework/P2-BranchPredictor/branch_traces/");
     std::string path_to_trace_file = traces_path + "wrf.out";
@@ -63,11 +63,13 @@ int main(int argc, char * argv[])
 		}
 
 		++branch_instr_counter; // update at end, so first line is 0
+		counter += lineLength;
 	}
     
 
 	// Results
-	uint64_t const unique_branch_count = branch_frequencies.size();
+	/*
+	uint64_t unique_branch_count = branch_frequencies.size();
 
 	json results = json::object();
 	json branch_freqs_json = json::array();
@@ -76,10 +78,11 @@ int main(int argc, char * argv[])
 	results.at("total_branch_instructions") = branch_instr_counter;
 	results.at("unique_branch_addresses") = unique_branch_count;
 
-	for (auto b : branch_frequencies) {
+	for (auto& b : branch_frequencies) {
 		branch_freqs_json.push_back({b.first, b.second.size()});
 	}
 
 	results.at("branch_freqs") = branch_freqs_json;
 	std::cout << results.dump(2);
+	*/
 }
