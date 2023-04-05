@@ -20,7 +20,7 @@ int main(int argc, char * argv[])
 
 	// Path setup
     std::string traces_path("/cs/studres/CS4202/Coursework/P2-BranchPredictor/branch_traces/");
-    std::string path_to_trace_file = traces_path + "wrf.out";
+    std::string path_to_trace_file = traces_path + "cactusbssn.out";
 
 	// File reading setup
     struct stat sb;
@@ -50,29 +50,24 @@ int main(int argc, char * argv[])
 		//new GSharePredictor(1024),
 		//new GSharePredictor(2048),
 		//new GSharePredictor(4096),
-		//new PerceptronPredictor(12, 1 << 14, 10),
-		new PerceptronBranchPredictor(12, 1 << 14, 10),
-		new PerceptronBranchPredictor(8, 1 << 12, 8),
+		new PerceptronPredictor(8, 1 << 12, 8),
+		new PerceptronPredictor(12, 1 << 14, 10),
+		
 	};
 
 	// File reading loop
 	while (counter < sb.st_size)
 	{
 		bool is_conditional_branch = *(data + counter + 38) == '1';
-		if (!is_conditional_branch) {
-			counter += lineLength;
-			continue;
-		}
-		auto program_counter = strtoul(data + counter, nullptr, 16); // string to unsigned long, from base 16
-		bool taken = strtoul(data + counter + 40, nullptr, 10); // string to unsigned long, from base 10
+		uint64_t program_counter = strtoul(data + counter, nullptr, 16); // string to unsigned long, from base 16
+		bool taken = *(data + counter + 40) == '1'; // string to unsigned long, from base 10
 
-		// Run trace on always taken predictor
-		//bp -> predict(program_counter, taken);
-		for (BranchPredictor * bp : predictors)
-		{
-			bp -> predict(program_counter, taken);
+		if (is_conditional_branch) {
+			for (BranchPredictor * bp : predictors)
+			{
+				bp -> predict(program_counter, taken);
+			}
 		}
-		
 		counter += lineLength;
 	}
 

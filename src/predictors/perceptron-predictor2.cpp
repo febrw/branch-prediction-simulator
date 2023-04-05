@@ -3,16 +3,30 @@
 #include <vector>
 #include <cmath>
 
-
 class PerceptronBranchPredictor : public BranchPredictor {
+
+private:
+    int _history_length; // Number of bits of history
+    int _table_entries;
+    int _weight_bits;
+    int _table_mask;
+    std::vector<std::vector<int>> _weights;
+    std::vector<int> _bias;
+
+
 public:
-    PerceptronBranchPredictor(int history_length, int table_entries, int weight_bits)
-        : _history_length(history_length), _table_entries(table_entries), _weight_bits(weight_bits),
-          _table_mask(table_entries - 1), _weights(table_entries, std::vector<int>(history_length, 0)),
-          _bias(table_entries, 1 << (weight_bits - 1)) {}
+    PerceptronBranchPredictor(int history_length, int table_entries, int weight_bits): 
+        _history_length(history_length),
+        _table_entries(table_entries),
+        _weight_bits(weight_bits),
+        _table_mask(table_entries - 1),
+        _weights(table_entries,
+        std::vector<int>(history_length, 0)),
+        _bias(table_entries, 1 << (weight_bits - 1))
+        {}
 
     void predict(uint64_t program_counter, bool taken) override {
-        _total_predictions++;
+        ++_total_predictions;
         std::vector<int>& perceptron = _weights[program_counter & _table_mask]; // step 1
         int prediction = _bias[program_counter & _table_mask];
         for (int i = 0; i < _history_length; i++) {
@@ -41,12 +55,4 @@ public:
     std::string get_name() const override {
         return "Perceptron";
     }
-
-private:
-    int _history_length;
-    int _table_entries;
-    int _weight_bits;
-    int _table_mask;
-    std::vector<std::vector<int>> _weights;
-    std::vector<int> _bias;
 };
