@@ -13,6 +13,7 @@ private:
     std::vector<std::vector<int>> _perceptron_table; // 2D vectror of integer weights, |table_entries| X |history length|
     std::vector<int> _history;
 
+    
 public:
     // _table_entries : number of perceptrons used, N
     // _history_length : number of bits used in the GHR, stores the number of previous branches remembered
@@ -62,4 +63,11 @@ public:
     std::string get_name() const override {
         return "Perceptron Predictor";
     }
+
+    void reset_stats()
+    {
+        _misspredictions = 0;
+        _total_predictions = 0;
+    }
+
 };

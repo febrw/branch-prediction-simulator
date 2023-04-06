@@ -75,6 +75,7 @@ int main(int argc, char * argv[])
 	json branch_freqs_json = json::array();
 	json branch_count = json::object();
 
+	results["file_name"] = path_to_trace_file.substr(path_to_trace_file.find_last_of("/") + 1);
 	results["total_branch_instructions"] = branch_instr_counter;
 	results["unique_branch_addresses"] = unique_branch_count;
 
