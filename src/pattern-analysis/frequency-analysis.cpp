@@ -68,7 +68,7 @@ int main(int argc, char * argv[])
     
 
 	// Results
-	/*
+	
 	uint64_t unique_branch_count = branch_frequencies.size();
 
 	json results = json::object();
@@ -84,5 +84,4 @@ int main(int argc, char * argv[])
 
 	results.at("branch_freqs") = branch_freqs_json;
 	std::cout << results.dump(2);
-	*/
 }
