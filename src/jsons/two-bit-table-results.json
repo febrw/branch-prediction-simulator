@@ -1,0 +1,170 @@
+[
+  {
+    "file_name": "bwaves.out",
+    "outputs": [
+      {
+        "missprediction_rate": 0.33782772043179515,
+        "table_size": 512
+      },
+      {
+        "missprediction_rate": 0.33125893917133675,
+        "table_size": 1024
+      },
+      {
+        "missprediction_rate": 0.3283297654977879,
+        "table_size": 2048
+      },
+      {
+        "missprediction_rate": 0.3260235877174939,
+        "table_size": 4096
+      }
+    ]
+  },
+  {
+    "file_name": "exchange2.out",
+    "outputs": [
+      {
+        "missprediction_rate": 7.600639983227679,
+        "table_size": 512
+      },
+      {
+        "missprediction_rate": 7.301842630791658,
+        "table_size": 1024
+      },
+      {
+        "missprediction_rate": 7.1382882701363215,
+        "table_size": 2048
+      },
+      {
+        "missprediction_rate": 7.077380010549115,
+        "table_size": 4096
+      }
+    ]
+  },
+  {
+    "file_name": "cactusbssn.out",
+    "outputs": [
+      {
+        "missprediction_rate": 8.105784099305643,
+        "table_size": 512
+      },
+      {
+        "missprediction_rate": 7.533814002895762,
+        "table_size": 1024
+      },
+      {
+        "missprediction_rate": 7.175913107380503,
+        "table_size": 2048
+      },
+      {
+        "missprediction_rate": 6.982197218291371,
+        "table_size": 4096
+      }
+    ]
+  },
+  {
+    "file_name": "wrf.out",
+    "outputs": [
+      {
+        "missprediction_rate": 6.229761216900266,
+        "table_size": 512
+      },
+      {
+        "missprediction_rate": 5.775307168523054,
+        "table_size": 1024
+      },
+      {
+        "missprediction_rate": 5.509419442754148,
+        "table_size": 2048
+      },
+      {
+        "missprediction_rate": 5.354837606871107,
+        "table_size": 4096
+      }
+    ]
+  },
+  {
+    "file_name": "povray.out",
+    "outputs": [
+      {
+        "missprediction_rate": 6.822560242169611,
+        "table_size": 512
+      },
+      {
+        "missprediction_rate": 6.221838929702955,
+        "table_size": 1024
+      },
+      {
+        "missprediction_rate": 5.801146794766577,
+        "table_size": 2048
+      },
+      {
+        "missprediction_rate": 5.597350617571664,
+        "table_size": 4096
+      }
+    ]
+  },
+  {
+    "file_name": "gcc.out",
+    "outputs": [
+      {
+        "missprediction_rate": 8.135800131973383,
+        "table_size": 512
+      },
+      {
+        "missprediction_rate": 6.942763582762705,
+        "table_size": 1024
+      },
+      {
+        "missprediction_rate": 6.1907252603263165,
+        "table_size": 2048
+      },
+      {
+        "missprediction_rate": 5.8156203426015285,
+        "table_size": 4096
+      }
+    ]
+  },
+  {
+    "file_name": "xz.out",
+    "outputs": [
+      {
+        "missprediction_rate": 9.26776793182085,
+        "table_size": 512
+      },
+      {
+        "missprediction_rate": 8.093176265790301,
+        "table_size": 1024
+      },
+      {
+        "missprediction_rate": 7.453811620600812,
+        "table_size": 2048
+      },
+      {
+        "missprediction_rate": 7.1359603793112365,
+        "table_size": 4096
+      }
+    ]
+  },
+  {
+    "file_name": "leela.out",
+    "outputs": [
+      {
+        "missprediction_rate": 10.240843999376697,
+        "table_size": 512
+      },
+      {
+        "missprediction_rate": 9.346584112540688,
+        "table_size": 1024
+      },
+      {
+        "missprediction_rate": 8.771735721960379,
+        "table_size": 2048
+      },
+      {
+        "missprediction_rate": 8.484936327366173,
+        "table_size": 4096
+      }
+    ]
+  }
+]

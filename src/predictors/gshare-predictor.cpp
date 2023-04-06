@@ -1,18 +1,12 @@
 #include "branch-predictor.hpp"
 #include <math.h>
 #include <iostream>
+#include "state.hpp"
+
 
 class GSharePredictor : public BranchPredictor
 {
 private:
-
-    enum State {
-        STRONG_NOT_TAKEN, // 00
-        WEAK_NOT_TAKEN, // 01
-        WEAK_TAKEN, // 10
-        STRONG_TAKEN // 11
-    };
-
     State * _table;
     uint64_t _bit_count;
     uint32_t _global_history;

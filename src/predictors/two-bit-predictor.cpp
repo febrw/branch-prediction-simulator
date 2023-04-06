@@ -1,21 +1,16 @@
 #include "branch-predictor.hpp"
 #include <math.h>
 #include <iostream>
+#include "state.hpp"
 
 class TwoBitPredictor : public BranchPredictor
 {
+
 private:
-
-    enum State {
-        STRONG_NOT_TAKEN, // 00
-        WEAK_NOT_TAKEN, // 01
-        WEAK_TAKEN, // 10
-        STRONG_TAKEN // 11
-    };
-
     State * _table;
     uint64_t _bit_count;
     uint64_t _table_size;
+    State _init_state;
 
 public:
 
@@ -26,16 +21,29 @@ public:
         _misspredictions = 0;
         _table = new State[table_size];
         _bit_count = static_cast<uint64_t>(log2(table_size));
-        initTable(table_size);
+        _init_state = STRONG_TAKEN;
+        initTable();
     }
 
-    void initTable(uint64_t table_size)
+    TwoBitPredictor(uint64_t table_size, State init_state)
     {
-        for (uint64_t i = 0; i < table_size; ++i)
+        _table_size = table_size;
+        _total_predictions = 0;
+        _misspredictions = 0;
+        _table = new State[table_size];
+        _bit_count = static_cast<uint64_t>(log2(table_size));
+        _init_state = init_state;
+        initTable();
+    }
+
+    void initTable()
+    {
+        for (uint64_t i = 0; i < _table_size; ++i)
         {
-            _table[i] = STRONG_TAKEN;
+            _table[i] = _init_state;
         }
     }
+
 
     ~TwoBitPredictor()
     {
@@ -91,5 +99,15 @@ public:
                 break;
         }
         //_table[index] = state;
-    } 
+    }
+
+    uint64_t get_table_size() const
+    {
+        return _table_size;
+    }
+
+    State get_init_state() const
+    {
+        return _init_state;
+    }
 };

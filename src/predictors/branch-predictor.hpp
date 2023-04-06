@@ -2,6 +2,7 @@
 #define BRANCH_PREDICTOR_HPP
 
 #include <stdint.h>
+#include <string>
 
 class BranchPredictor
 {
@@ -27,12 +28,17 @@ public:
     }
 
     virtual double get_accuracy() const
-{
-    if (_total_predictions == 0) {
-        return 0.0;
+    {
+        return 100.00 - get_misspredictions();
     }
-    return (1.0 - (_misspredictions / static_cast<double>(_total_predictions))) * 100;
-}
+
+    virtual double get_missprediction_rate() const
+    {
+        if (_total_predictions == 0) {
+            return 0.0;
+        }
+        return (_misspredictions / static_cast<double>(_total_predictions)) * 100;
+    }
 
     virtual std::string get_name() const = 0;
     
