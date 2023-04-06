@@ -75,13 +75,15 @@ int main(int argc, char * argv[])
 	json branch_freqs_json = json::array();
 	json branch_count = json::object();
 
-	results.at("total_branch_instructions") = branch_instr_counter;
-	results.at("unique_branch_addresses") = unique_branch_count;
+	results["total_branch_instructions"] = branch_instr_counter;
+	results["unique_branch_addresses"] = unique_branch_count;
 
 	for (auto& b : branch_frequencies) {
-		branch_freqs_json.push_back({b.first, b.second.size()});
+                branch_count["branch_address"] = b.first;
+                branch_count["frequency"] = b.second.size();
+		branch_freqs_json.push_back(branch_count);
 	}
 
-	results.at("branch_freqs") = branch_freqs_json;
+	results["branch_freqs"] = branch_freqs_json;
 	std::cout << results.dump(2);
 }
