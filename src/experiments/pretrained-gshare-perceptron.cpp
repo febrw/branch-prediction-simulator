@@ -8,13 +8,11 @@
 #include <sys/stat.h>
 #include <errno.h>
 #include <filesystem>
-#include "../predictors/two-bit-predictor.cpp"
-#include "../predictors/always-taken-predictor.cpp"
-#include "../predictors/gshare-predictor.cpp"
-#include "../predictors/perceptron-predictor.cpp"
+#include "../predictors/gshare-perceptron-predictor.cpp"
 
 #include "../include/json.hpp"
 using json = nlohmann::json;
+extern "C" unsigned long hex2ull(const char *ptr);
 
 int main(int argc, char * argv[])
 {
@@ -22,14 +20,15 @@ int main(int argc, char * argv[])
 	// Path setup
     std::string traces_path("/cs/studres/CS4202/Coursework/P2-BranchPredictor/branch_traces/");
 
-	PerceptronPredictor * predictors[] = {
-		new PerceptronPredictor(8, 1 << 12, 8),
-		new PerceptronPredictor(12, 1 << 14, 10),
+	BranchPredictor * predictors[] = {
+		new GSharePerceptronPredictor(8, 1 << 12),
+		new GSharePerceptronPredictor(12, 1 << 14),
 	};
 
 	json output = json::array();
 	json result_for_file = json::object();
 	
+	// first run through
 	for (const auto & f : std::filesystem::directory_iterator(traces_path)) {
 
 		// Get file path
@@ -48,11 +47,11 @@ int main(int argc, char * argv[])
 		while (counter < sb.st_size)
 		{
 			bool is_conditional_branch = *(data + counter + 38) == '1';
-			uint64_t program_counter = strtoul(data + counter, nullptr, 16); // string to unsigned long, from base 16
-			bool taken = *(data + counter + 40) == '1'; // string to unsigned long, from base 10
+			uint64_t program_counter = hex2ull(data + counter);
+			bool taken = *(data + counter + 40) == '1';
 
 			if (is_conditional_branch) {
-				for (PerceptronPredictor * bp : predictors)
+				for (BranchPredictor * bp : predictors)
 				{
 					bp -> predict(program_counter, taken);
 				}
@@ -61,31 +60,31 @@ int main(int argc, char * argv[])
 		}
 
 		result_for_file["file_name"] = file_path.substr(file_path.find_last_of("/") + 1);
-		json predictor_results_list = json::array();
+		json predictor_results_list_before = json::array();
 		// print results
 		for (BranchPredictor * bp : predictors)
 		{
 			json result_for_predictor = json::object();
 			result_for_predictor["name"] = bp -> get_name();
 			result_for_predictor["missprediction_rate"] = bp -> get_missprediction_rate();
-			predictor_results_list.push_back(result_for_predictor);
+			predictor_results_list_before.push_back(result_for_predictor);
 		}
 
-        result_for_file["results_before_training"] = predictor_results_list;
+        result_for_file["results_before_training"] = predictor_results_list_before;
 
         counter = 0;
         // File reading loop
 
         // reset prediction stats for next run
-        for (PerceptronPredictor * bp : predictors) { bp -> reset_stats();}
+        for (BranchPredictor * bp : predictors) { bp -> reset_stats();}
 		while (counter < sb.st_size)
 		{
 			bool is_conditional_branch = *(data + counter + 38) == '1';
-			uint64_t program_counter = strtoul(data + counter, nullptr, 16); // string to unsigned long, from base 16
-			bool taken = *(data + counter + 40) == '1'; // string to unsigned long, from base 10
+			uint64_t program_counter = hex2ull(data + counter);
+			bool taken = *(data + counter + 40) == '1';
 
 			if (is_conditional_branch) {
-				for (PerceptronPredictor * bp : predictors)
+				for (BranchPredictor * bp : predictors)
 				{
 					bp -> predict(program_counter, taken);
 				}

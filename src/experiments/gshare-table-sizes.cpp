@@ -8,7 +8,7 @@
 #include <sys/stat.h>
 #include <errno.h>
 #include <filesystem>
-#include "../predictors/two-bit-predictor.cpp"
+#include "../predictors/gshare-predictor.cpp"
 
 #include "../include/json.hpp"
 using json = nlohmann::json;
@@ -21,11 +21,11 @@ int main(int argc, char * argv[])
 	// Setup file path, predictor, and JSON output structures
     std::string traces_path("/cs/studres/CS4202/Coursework/P2-BranchPredictor/branch_traces/");
 
-    TwoBitPredictor * two_bit_predictors[] = {
-        new TwoBitPredictor(512),
-		new TwoBitPredictor(1024),
-		new TwoBitPredictor(2048),
-		new TwoBitPredictor(4096),
+    GSharePredictor * gshare_predictors[] = {
+        new GSharePredictor(512),
+		new GSharePredictor(1024),
+		new GSharePredictor(2048),
+		new GSharePredictor(4096),
     };
 
     json output = json::array(); // global output object
@@ -54,7 +54,7 @@ int main(int argc, char * argv[])
 			bool taken = *(data + counter + 40) == '1'; // string to unsigned long, from base 10
 
 			if (is_conditional_branch) {
-                for (BranchPredictor * bp : two_bit_predictors) {
+                for (BranchPredictor * bp : gshare_predictors) {
                     bp -> predict(program_counter, taken);
                 }
 			}
@@ -64,7 +64,7 @@ int main(int argc, char * argv[])
         // Format results
         file_summary["file_name"] = file_path.substr(file_path.find_last_of("/") + 1);
         json results_for_file = json::array();
-        for (TwoBitPredictor * bp : two_bit_predictors) {
+        for (GSharePredictor * bp : gshare_predictors) {
             json result = json::object();
             result["table_size"] = bp -> get_table_size();
             result["missprediction_rate"] = bp -> get_missprediction_rate();

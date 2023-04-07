@@ -1,0 +1,170 @@
+[
+  {
+    "file_name": "bwaves.out",
+    "outputs": [
+      {
+        "missprediction_rate": 0.3152031327293843,
+        "start_state": "STRONG_NOT_TAKEN"
+      },
+      {
+        "missprediction_rate": 0.31245976484856064,
+        "start_state": "WEAK_NOT_TAKEN"
+      },
+      {
+        "missprediction_rate": 0.3180011493727743,
+        "start_state": "WEAK_TAKEN"
+      },
+      {
+        "missprediction_rate": 0.3260235877174939,
+        "start_state": "STRONG_TAKEN"
+      }
+    ]
+  },
+  {
+    "file_name": "exchange2.out",
+    "outputs": [
+      {
+        "missprediction_rate": 7.07162260267684,
+        "start_state": "STRONG_NOT_TAKEN"
+      },
+      {
+        "missprediction_rate": 7.069217325498711,
+        "start_state": "WEAK_NOT_TAKEN"
+      },
+      {
+        "missprediction_rate": 7.071582215560043,
+        "start_state": "WEAK_TAKEN"
+      },
+      {
+        "missprediction_rate": 7.077380010549115,
+        "start_state": "STRONG_TAKEN"
+      }
+    ]
+  },
+  {
+    "file_name": "cactusbssn.out",
+    "outputs": [
+      {
+        "missprediction_rate": 6.976074776398371,
+        "start_state": "STRONG_NOT_TAKEN"
+      },
+      {
+        "missprediction_rate": 6.973994364551146,
+        "start_state": "WEAK_NOT_TAKEN"
+      },
+      {
+        "missprediction_rate": 6.976327593650668,
+        "start_state": "WEAK_TAKEN"
+      },
+      {
+        "missprediction_rate": 6.982197218291371,
+        "start_state": "STRONG_TAKEN"
+      }
+    ]
+  },
+  {
+    "file_name": "wrf.out",
+    "outputs": [
+      {
+        "missprediction_rate": 5.350630646638313,
+        "start_state": "STRONG_NOT_TAKEN"
+      },
+      {
+        "missprediction_rate": 5.348947427042066,
+        "start_state": "WEAK_NOT_TAKEN"
+      },
+      {
+        "missprediction_rate": 5.3506001614192344,
+        "start_state": "WEAK_TAKEN"
+      },
+      {
+        "missprediction_rate": 5.354837606871107,
+        "start_state": "STRONG_TAKEN"
+      }
+    ]
+  },
+  {
+    "file_name": "povray.out",
+    "outputs": [
+      {
+        "missprediction_rate": 5.593702667784585,
+        "start_state": "STRONG_NOT_TAKEN"
+      },
+      {
+        "missprediction_rate": 5.59232844012507,
+        "start_state": "WEAK_NOT_TAKEN"
+      },
+      {
+        "missprediction_rate": 5.593761563255708,
+        "start_state": "WEAK_TAKEN"
+      },
+      {
+        "missprediction_rate": 5.597350617571664,
+        "start_state": "STRONG_TAKEN"
+      }
+    ]
+  },
+  {
+    "file_name": "gcc.out",
+    "outputs": [
+      {
+        "missprediction_rate": 5.812486008648021,
+        "start_state": "STRONG_NOT_TAKEN"
+      },
+      {
+        "missprediction_rate": 5.811324753733001,
+        "start_state": "WEAK_NOT_TAKEN"
+      },
+      {
+        "missprediction_rate": 5.812564329342678,
+        "start_state": "WEAK_TAKEN"
+      },
+      {
+        "missprediction_rate": 5.8156203426015285,
+        "start_state": "STRONG_TAKEN"
+      }
+    ]
+  },
+  {
+    "file_name": "xz.out",
+    "outputs": [
+      {
+        "missprediction_rate": 7.133333916150806,
+        "start_state": "STRONG_NOT_TAKEN"
+      },
+      {
+        "missprediction_rate": 7.132361292185058,
+        "start_state": "WEAK_NOT_TAKEN"
+      },
+      {
+        "missprediction_rate": 7.1334007761640175,
+        "start_state": "WEAK_TAKEN"
+      },
+      {
+        "missprediction_rate": 7.1359603793112365,
+        "start_state": "STRONG_TAKEN"
+      }
+    ]
+  },
+  {
+    "file_name": "leela.out",
+    "outputs": [
+      {
+        "missprediction_rate": 8.482575465208342,
+        "start_state": "STRONG_NOT_TAKEN"
+      },
+      {
+        "missprediction_rate": 8.481701197809837,
+        "start_state": "WEAK_NOT_TAKEN"
+      },
+      {
+        "missprediction_rate": 8.482635564004868,
+        "start_state": "WEAK_TAKEN"
+      },
+      {
+        "missprediction_rate": 8.484936327366173,
+        "start_state": "STRONG_TAKEN"
+      }
+    ]
+  }
+]

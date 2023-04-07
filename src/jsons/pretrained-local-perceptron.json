@@ -1,0 +1,186 @@
+[
+  {
+    "file_name": "bwaves.out",
+    "results_after_training": [
+      {
+        "missprediction_rate": 0.564554506566486,
+        "name": "Local Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 0.5541384524213665,
+        "name": "Local Perceptron Predictor"
+      }
+    ],
+    "results_before_training": [
+      {
+        "missprediction_rate": 0.5790364286465316,
+        "name": "Local Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 0.5759542384377974,
+        "name": "Local Perceptron Predictor"
+      }
+    ]
+  },
+  {
+    "file_name": "exchange2.out",
+    "results_after_training": [
+      {
+        "missprediction_rate": 5.572555941395033,
+        "name": "Local Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 4.474595957242773,
+        "name": "Local Perceptron Predictor"
+      }
+    ],
+    "results_before_training": [
+      {
+        "missprediction_rate": 3.6088581332518173,
+        "name": "Local Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 2.9024425858991343,
+        "name": "Local Perceptron Predictor"
+      }
+    ]
+  },
+  {
+    "file_name": "cactusbssn.out",
+    "results_after_training": [
+      {
+        "missprediction_rate": 6.870702989577556,
+        "name": "Local Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 6.357091001226661,
+        "name": "Local Perceptron Predictor"
+      }
+    ],
+    "results_before_training": [
+      {
+        "missprediction_rate": 6.168626772012652,
+        "name": "Local Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 5.3445041742853885,
+        "name": "Local Perceptron Predictor"
+      }
+    ]
+  },
+  {
+    "file_name": "wrf.out",
+    "results_after_training": [
+      {
+        "missprediction_rate": 2.0497321759356315,
+        "name": "Local Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 1.9442628707492378,
+        "name": "Local Perceptron Predictor"
+      }
+    ],
+    "results_before_training": [
+      {
+        "missprediction_rate": 4.219536902567691,
+        "name": "Local Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 3.940035096252422,
+        "name": "Local Perceptron Predictor"
+      }
+    ]
+  },
+  {
+    "file_name": "povray.out",
+    "results_after_training": [
+      {
+        "missprediction_rate": 6.055357673223002,
+        "name": "Local Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 5.320918621651992,
+        "name": "Local Perceptron Predictor"
+      }
+    ],
+    "results_before_training": [
+      {
+        "missprediction_rate": 3.81735009063017,
+        "name": "Local Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 3.4420069275887464,
+        "name": "Local Perceptron Predictor"
+      }
+    ]
+  },
+  {
+    "file_name": "gcc.out",
+    "results_after_training": [
+      {
+        "missprediction_rate": 5.6638646282099065,
+        "name": "Local Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 4.201262702637601,
+        "name": "Local Perceptron Predictor"
+      }
+    ],
+    "results_before_training": [
+      {
+        "missprediction_rate": 5.881758665303749,
+        "name": "Local Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 4.804937968116536,
+        "name": "Local Perceptron Predictor"
+      }
+    ]
+  },
+  {
+    "file_name": "xz.out",
+    "results_after_training": [
+      {
+        "missprediction_rate": 16.62667622419603,
+        "name": "Local Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 16.471174807263825,
+        "name": "Local Perceptron Predictor"
+      }
+    ],
+    "results_before_training": [
+      {
+        "missprediction_rate": 11.747685792810143,
+        "name": "Local Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 11.01352885376882,
+        "name": "Local Perceptron Predictor"
+      }
+    ]
+  },
+  {
+    "file_name": "leela.out",
+    "results_after_training": [
+      {
+        "missprediction_rate": 8.003412416274866,
+        "name": "Local Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 7.748927704924668,
+        "name": "Local Perceptron Predictor"
+      }
+    ],
+    "results_before_training": [
+      {
+        "missprediction_rate": 13.102053455765834,
+        "name": "Local Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 12.907939647518212,
+        "name": "Local Perceptron Predictor"
+      }
+    ]
+  }
+]

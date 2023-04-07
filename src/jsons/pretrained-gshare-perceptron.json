@@ -1,0 +1,186 @@
+[
+  {
+    "file_name": "bwaves.out",
+    "results_after_training": [
+      {
+        "missprediction_rate": 0.5849822140137353,
+        "name": "GShare Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 0.5489358902250633,
+        "name": "GShare Perceptron Predictor"
+      }
+    ],
+    "results_before_training": [
+      {
+        "missprediction_rate": 0.6083609546395597,
+        "name": "GShare Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 0.603267689968389,
+        "name": "GShare Perceptron Predictor"
+      }
+    ]
+  },
+  {
+    "file_name": "exchange2.out",
+    "results_after_training": [
+      {
+        "missprediction_rate": 6.716819708205469,
+        "name": "GShare Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 4.942209346694891,
+        "name": "GShare Perceptron Predictor"
+      }
+    ],
+    "results_before_training": [
+      {
+        "missprediction_rate": 4.235935433385625,
+        "name": "GShare Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 3.2217835184125314,
+        "name": "GShare Perceptron Predictor"
+      }
+    ]
+  },
+  {
+    "file_name": "cactusbssn.out",
+    "results_after_training": [
+      {
+        "missprediction_rate": 6.334778597995923,
+        "name": "GShare Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 4.9471045271136,
+        "name": "GShare Perceptron Predictor"
+      }
+    ],
+    "results_before_training": [
+      {
+        "missprediction_rate": 6.58473355939647,
+        "name": "GShare Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 5.05672974194175,
+        "name": "GShare Perceptron Predictor"
+      }
+    ]
+  },
+  {
+    "file_name": "wrf.out",
+    "results_after_training": [
+      {
+        "missprediction_rate": 2.111089192435812,
+        "name": "GShare Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 1.9568412882468473,
+        "name": "GShare Perceptron Predictor"
+      }
+    ],
+    "results_before_training": [
+      {
+        "missprediction_rate": 4.015933290808573,
+        "name": "GShare Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 3.3538143961302835,
+        "name": "GShare Perceptron Predictor"
+      }
+    ]
+  },
+  {
+    "file_name": "povray.out",
+    "results_after_training": [
+      {
+        "missprediction_rate": 4.531530699045804,
+        "name": "GShare Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 2.9878473359295374,
+        "name": "GShare Perceptron Predictor"
+      }
+    ],
+    "results_before_training": [
+      {
+        "missprediction_rate": 3.191100033252254,
+        "name": "GShare Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 2.49085024266818,
+        "name": "GShare Perceptron Predictor"
+      }
+    ]
+  },
+  {
+    "file_name": "gcc.out",
+    "results_after_training": [
+      {
+        "missprediction_rate": 6.01392481802641,
+        "name": "GShare Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 4.117950423355309,
+        "name": "GShare Perceptron Predictor"
+      }
+    ],
+    "results_before_training": [
+      {
+        "missprediction_rate": 5.2979081960562775,
+        "name": "GShare Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 3.66692955806692,
+        "name": "GShare Perceptron Predictor"
+      }
+    ]
+  },
+  {
+    "file_name": "xz.out",
+    "results_after_training": [
+      {
+        "missprediction_rate": 17.28147053410073,
+        "name": "GShare Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 15.908797560810816,
+        "name": "GShare Perceptron Predictor"
+      }
+    ],
+    "results_before_training": [
+      {
+        "missprediction_rate": 12.286138407138322,
+        "name": "GShare Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 10.71577031139704,
+        "name": "GShare Perceptron Predictor"
+      }
+    ]
+  },
+  {
+    "file_name": "leela.out",
+    "results_after_training": [
+      {
+        "missprediction_rate": 7.624628827404645,
+        "name": "GShare Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 5.989097805443607,
+        "name": "GShare Perceptron Predictor"
+      }
+    ],
+    "results_before_training": [
+      {
+        "missprediction_rate": 13.341325589092001,
+        "name": "GShare Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 11.885595912093324,
+        "name": "GShare Perceptron Predictor"
+      }
+    ]
+  }
+]

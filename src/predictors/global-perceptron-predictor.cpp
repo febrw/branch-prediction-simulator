@@ -2,27 +2,26 @@
 #include <cstdint>
 #include <vector>
 #include <string>
-
-class PerceptronPredictor : public BranchPredictor {
+#include <cmath> // floor
+class GlobalPerceptronPredictor : public BranchPredictor {
 
 private:
     const int _history_length;
     const int _table_entries;
-    const int _weight_bits;
+
 
     std::vector<std::vector<int>> _perceptron_table; // 2D vectror of integer weights, |table_entries| X |history length|
     std::vector<int> _history;
-
     
 public:
     // _table_entries : number of perceptrons used, N
     // _history_length : number of bits used in the GHR, stores the number of previous branches remembered
-    PerceptronPredictor(int history_length, int table_entries, int weight_bits)
+    GlobalPerceptronPredictor(int history_length, int table_entries)
         : _history_length(history_length),
           _table_entries(table_entries),
-          _weight_bits(weight_bits),
           _perceptron_table(table_entries, std::vector<int>(history_length + 1, 0)), // each weight set to 0, we need +1 size for a bias term
           _history(history_length, 0) // initialise length and zero out
+          
     {
         _total_predictions = 0;
         _misspredictions = 0;
@@ -61,13 +60,8 @@ public:
 
 
     std::string get_name() const override {
-        return "Perceptron Predictor";
+        return "Global Perceptron Predictor";
     }
 
-    void reset_stats()
-    {
-        _misspredictions = 0;
-        _total_predictions = 0;
-    }
 
 };

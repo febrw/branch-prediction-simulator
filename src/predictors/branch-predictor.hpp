@@ -41,7 +41,17 @@ public:
     }
 
     virtual std::string get_name() const = 0;
+
+
+    void reset_stats()
+    {
+        _misspredictions = 0;
+        _total_predictions = 0;
+    }
     
 };
 
 #endif /* BRANCH_PREDICTOR_HPP */
+
+
+

@@ -8,17 +8,14 @@
 #include <sys/stat.h>
 #include <errno.h>
 #include <filesystem>
-#include "predictors/two-bit-predictor.cpp"
-#include "predictors/always-taken-predictor.cpp"
-#include "predictors/gshare-predictor.cpp"
-#include "predictors/global-perceptron-predictor.cpp"
-#include "predictors/hybrid-perceptron-predictor.cpp"
-#include "predictors/local-perceptron-predictor.cpp"
+#include "../predictors/two-bit-predictor.cpp"
+#include "../predictors/always-taken-predictor.cpp"
+#include "../predictors/gshare-predictor.cpp"
+#include "../predictors/global-perceptron-predictor.cpp"
+#include "../predictors/hybrid-perceptron-predictor.cpp"
 
-#include "include/json.hpp"
+#include "../include/json.hpp"
 using json = nlohmann::json;
-extern "C" unsigned long hex2ull(const char *ptr);
-
 
 int main(int argc, char * argv[])
 {
@@ -36,11 +33,10 @@ int main(int argc, char * argv[])
 		//new GSharePredictor(1024),
 		//new GSharePredictor(2048),
 		//new GSharePredictor(4096),
-		new GlobalPerceptronPredictor(8, 1 << 12),
-		new GlobalPerceptronPredictor(12, 1 << 14),
-		new LocalPerceptronPredictor(8, 1 << 12),
-		new LocalPerceptronPredictor(12, 1 << 14)
-		
+		new GlobalPerceptronPredictor(8, 1 << 12, 8, false),
+		new GlobalPerceptronPredictor(12, 1 << 14, 10, false),
+		new GlobalPerceptronPredictor(8, 1 << 12, 8, true),
+		new GlobalPerceptronPredictor(12, 1 << 14, 10, true),
 	};
 
 	json output = json::array();
@@ -64,7 +60,7 @@ int main(int argc, char * argv[])
 		while (counter < sb.st_size)
 		{
 			bool is_conditional_branch = *(data + counter + 38) == '1';
-			uint64_t program_counter = hex2ull(data + counter); // string to unsigned long, from base 16
+			uint64_t program_counter = strtoul(data + counter, nullptr, 16); // string to unsigned long, from base 16
 			bool taken = *(data + counter + 40) == '1'; // string to unsigned long, from base 10
 
 			if (is_conditional_branch) {

@@ -1,0 +1,170 @@
+[
+  {
+    "file_name": "bwaves.out",
+    "results": [
+      {
+        "missprediction_rate": 0.5692215108896403,
+        "name": "Global Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 0.5672541554372568,
+        "name": "Global Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 0.5790364286465316,
+        "name": "Local Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 0.5759542384377974,
+        "name": "Local Perceptron Predictor"
+      }
+    ]
+  },
+  {
+    "file_name": "exchange2.out",
+    "results": [
+      {
+        "missprediction_rate": 5.3812557288003315,
+        "name": "Global Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 4.293998644967357,
+        "name": "Global Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 3.618968374823318,
+        "name": "Local Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 2.9120412573245402,
+        "name": "Local Perceptron Predictor"
+      }
+    ]
+  },
+  {
+    "file_name": "cactusbssn.out",
+    "results": [
+      {
+        "missprediction_rate": 5.551738928843153,
+        "name": "Global Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 4.5557760243835235,
+        "name": "Global Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 4.677055201702783,
+        "name": "Local Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 4.040101933479334,
+        "name": "Local Perceptron Predictor"
+      }
+    ]
+  },
+  {
+    "file_name": "wrf.out",
+    "results": [
+      {
+        "missprediction_rate": 4.523131149916618,
+        "name": "Global Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 3.7980249715317047,
+        "name": "Global Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 3.938087133070921,
+        "name": "Local Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 3.4566536658094877,
+        "name": "Local Perceptron Predictor"
+      }
+    ]
+  },
+  {
+    "file_name": "povray.out",
+    "results": [
+      {
+        "missprediction_rate": 4.553662189105754,
+        "name": "Global Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 3.853657390017214,
+        "name": "Global Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 4.33027880598463,
+        "name": "Local Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 3.8032981927853293,
+        "name": "Local Perceptron Predictor"
+      }
+    ]
+  },
+  {
+    "file_name": "gcc.out",
+    "results": [
+      {
+        "missprediction_rate": 4.4706792999352905,
+        "name": "Global Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 3.7279551154943324,
+        "name": "Global Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 4.545457489326809,
+        "name": "Local Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 3.8806352850604435,
+        "name": "Local Perceptron Predictor"
+      }
+    ]
+  },
+  {
+    "file_name": "xz.out",
+    "results": [
+      {
+        "missprediction_rate": 6.052714629441434,
+        "name": "Global Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 5.382958954473895,
+        "name": "Global Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 6.510911346006737,
+        "name": "Local Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 5.929957122168925,
+        "name": "Local Perceptron Predictor"
+      }
+    ]
+  },
+  {
+    "file_name": "leela.out",
+    "results": [
+      {
+        "missprediction_rate": 6.458848278909943,
+        "name": "Global Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 5.566670305100725,
+        "name": "Global Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 6.662840603409154,
+        "name": "Local Perceptron Predictor"
+      },
+      {
+        "missprediction_rate": 6.115440353747413,
+        "name": "Local Perceptron Predictor"
+      }
+    ]
+  }
+]
