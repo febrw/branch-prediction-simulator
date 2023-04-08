@@ -1,0 +1,258 @@
+[
+  {
+    "file_name": "bwaves.out",
+    "outputs": [
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.9961925189189914,
+        "proportion_forward": 0.5713434298986816,
+        "proportion_forward_taken": 0.35096994331449055
+      }
+    ]
+  },
+  {
+    "file_name": "exchange2.out",
+    "outputs": [
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.9961925189189914,
+        "proportion_forward": 0.5713434298986816,
+        "proportion_forward_taken": 0.35096994331449055
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.81669421326699,
+        "proportion_forward": 0.44273353847001967,
+        "proportion_forward_taken": 0.3815227934526425
+      }
+    ]
+  },
+  {
+    "file_name": "cactusbssn.out",
+    "outputs": [
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.9961925189189914,
+        "proportion_forward": 0.5713434298986816,
+        "proportion_forward_taken": 0.35096994331449055
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.81669421326699,
+        "proportion_forward": 0.44273353847001967,
+        "proportion_forward_taken": 0.3815227934526425
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.8037955125335636,
+        "proportion_forward": 0.6622472268670929,
+        "proportion_forward_taken": 0.3424129772105822
+      }
+    ]
+  },
+  {
+    "file_name": "wrf.out",
+    "outputs": [
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.9961925189189914,
+        "proportion_forward": 0.5713434298986816,
+        "proportion_forward_taken": 0.35096994331449055
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.81669421326699,
+        "proportion_forward": 0.44273353847001967,
+        "proportion_forward_taken": 0.3815227934526425
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.8037955125335636,
+        "proportion_forward": 0.6622472268670929,
+        "proportion_forward_taken": 0.3424129772105822
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.9839278753035207,
+        "proportion_forward": 0.19005542203576223,
+        "proportion_forward_taken": 0.45235290211442836
+      }
+    ]
+  },
+  {
+    "file_name": "povray.out",
+    "outputs": [
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.9961925189189914,
+        "proportion_forward": 0.5713434298986816,
+        "proportion_forward_taken": 0.35096994331449055
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.81669421326699,
+        "proportion_forward": 0.44273353847001967,
+        "proportion_forward_taken": 0.3815227934526425
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.8037955125335636,
+        "proportion_forward": 0.6622472268670929,
+        "proportion_forward_taken": 0.3424129772105822
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.9839278753035207,
+        "proportion_forward": 0.19005542203576223,
+        "proportion_forward_taken": 0.45235290211442836
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.8151684651926573,
+        "proportion_forward": 0.6291238519555047,
+        "proportion_forward_taken": 0.399573449884323
+      }
+    ]
+  },
+  {
+    "file_name": "gcc.out",
+    "outputs": [
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.9961925189189914,
+        "proportion_forward": 0.5713434298986816,
+        "proportion_forward_taken": 0.35096994331449055
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.81669421326699,
+        "proportion_forward": 0.44273353847001967,
+        "proportion_forward_taken": 0.3815227934526425
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.8037955125335636,
+        "proportion_forward": 0.6622472268670929,
+        "proportion_forward_taken": 0.3424129772105822
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.9839278753035207,
+        "proportion_forward": 0.19005542203576223,
+        "proportion_forward_taken": 0.45235290211442836
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.8151684651926573,
+        "proportion_forward": 0.6291238519555047,
+        "proportion_forward_taken": 0.399573449884323
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.8019425813701082,
+        "proportion_forward": 0.6887102456932569,
+        "proportion_forward_taken": 0.4670849041862
+      }
+    ]
+  },
+  {
+    "file_name": "xz.out",
+    "outputs": [
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.9961925189189914,
+        "proportion_forward": 0.5713434298986816,
+        "proportion_forward_taken": 0.35096994331449055
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.81669421326699,
+        "proportion_forward": 0.44273353847001967,
+        "proportion_forward_taken": 0.3815227934526425
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.8037955125335636,
+        "proportion_forward": 0.6622472268670929,
+        "proportion_forward_taken": 0.3424129772105822
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.9839278753035207,
+        "proportion_forward": 0.19005542203576223,
+        "proportion_forward_taken": 0.45235290211442836
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.8151684651926573,
+        "proportion_forward": 0.6291238519555047,
+        "proportion_forward_taken": 0.399573449884323
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.8019425813701082,
+        "proportion_forward": 0.6887102456932569,
+        "proportion_forward_taken": 0.4670849041862
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.9375045999950934,
+        "proportion_forward": 0.713120602669475,
+        "proportion_forward_taken": 0.5027217660288542
+      }
+    ]
+  },
+  {
+    "file_name": "leela.out",
+    "outputs": [
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.9961925189189914,
+        "proportion_forward": 0.5713434298986816,
+        "proportion_forward_taken": 0.35096994331449055
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.81669421326699,
+        "proportion_forward": 0.44273353847001967,
+        "proportion_forward_taken": 0.3815227934526425
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.8037955125335636,
+        "proportion_forward": 0.6622472268670929,
+        "proportion_forward_taken": 0.3424129772105822
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.9839278753035207,
+        "proportion_forward": 0.19005542203576223,
+        "proportion_forward_taken": 0.45235290211442836
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.8151684651926573,
+        "proportion_forward": 0.6291238519555047,
+        "proportion_forward_taken": 0.399573449884323
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.8019425813701082,
+        "proportion_forward": 0.6887102456932569,
+        "proportion_forward_taken": 0.4670849041862
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.9375045999950934,
+        "proportion_forward": 0.713120602669475,
+        "proportion_forward_taken": 0.5027217660288542
+      },
+      {
+        "missprediction_rate": 0.0,
+        "proportion_backward_taken": 0.8840806784254455,
+        "proportion_forward": 0.4108620422086504,
+        "proportion_forward_taken": 0.14853034968451292
+      }
+    ]
+  }
+]
