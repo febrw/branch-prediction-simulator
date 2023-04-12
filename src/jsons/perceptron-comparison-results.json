@@ -1,0 +1,138 @@
+[
+  {
+    "file_name": "bwaves.out",
+    "results": [
+      {
+        "missprediction_rate": 0.5673962422199289,
+        "name": "Global Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      },
+      {
+        "missprediction_rate": 0.5809709948413755,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      },
+      {
+        "missprediction_rate": 0.6233128560776747,
+        "name": "GShare Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      }
+    ]
+  },
+  {
+    "file_name": "exchange2.out",
+    "results": [
+      {
+        "missprediction_rate": 4.315049307733406,
+        "name": "Global Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      },
+      {
+        "missprediction_rate": 3.033395568384498,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      },
+      {
+        "missprediction_rate": 4.48727343612782,
+        "name": "GShare Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      }
+    ]
+  },
+  {
+    "file_name": "cactusbssn.out",
+    "results": [
+      {
+        "missprediction_rate": 4.584472305514846,
+        "name": "Global Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      },
+      {
+        "missprediction_rate": 4.176212040936413,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      },
+      {
+        "missprediction_rate": 5.403618478906421,
+        "name": "GShare Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      }
+    ]
+  },
+  {
+    "file_name": "wrf.out",
+    "results": [
+      {
+        "missprediction_rate": 3.819911181314216,
+        "name": "Global Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      },
+      {
+        "missprediction_rate": 3.5651766906966404,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      },
+      {
+        "missprediction_rate": 4.482169903053737,
+        "name": "GShare Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      }
+    ]
+  },
+  {
+    "file_name": "povray.out",
+    "results": [
+      {
+        "missprediction_rate": 3.879221593906696,
+        "name": "Global Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      },
+      {
+        "missprediction_rate": 3.9636330817146286,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      },
+      {
+        "missprediction_rate": 4.460068361936513,
+        "name": "GShare Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      }
+    ]
+  },
+  {
+    "file_name": "gcc.out",
+    "results": [
+      {
+        "missprediction_rate": 3.760095217480829,
+        "name": "Global Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      },
+      {
+        "missprediction_rate": 4.193399942172216,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      },
+      {
+        "missprediction_rate": 4.87520116934002,
+        "name": "GShare Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      }
+    ]
+  },
+  {
+    "file_name": "xz.out",
+    "results": [
+      {
+        "missprediction_rate": 5.410758843362644,
+        "name": "Global Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      },
+      {
+        "missprediction_rate": 6.21024565113144,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      },
+      {
+        "missprediction_rate": 7.105729561262954,
+        "name": "GShare Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      }
+    ]
+  },
+  {
+    "file_name": "leela.out",
+    "results": [
+      {
+        "missprediction_rate": 5.590606635211032,
+        "name": "Global Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      },
+      {
+        "missprediction_rate": 6.3671522566270315,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      },
+      {
+        "missprediction_rate": 7.005238188426328,
+        "name": "GShare Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      }
+    ]
+  }
+]

@@ -8,26 +8,36 @@
 #include <sys/stat.h>
 #include <errno.h>
 #include <filesystem>
+#include "../predictors/two-bit-predictor.cpp"
 #include "../predictors/always-taken-predictor.cpp"
-
+#include "../predictors/gshare-predictor.cpp"
+#include "../predictors/global-perceptron-predictor.cpp"
+#include "../predictors/hybrid-perceptron-predictor.cpp"
+#include "../predictors/local-perceptron-predictor.cpp"
 
 #include "../include/json.hpp"
 using json = nlohmann::json;
 extern "C" unsigned long hex2ull(const char *ptr);
 
+
 int main(int argc, char * argv[])
 {
 
-	// Setup file path, predictor, and JSON output structures
+	// Path setup
     std::string traces_path("/cs/studres/CS4202/Coursework/P2-BranchPredictor/branch_traces/");
 
-    BranchPredictor * always_taken = new AlwaysTakenPredictor();
+	BranchPredictor * predictors[] = {
+		new LocalPerceptronPredictor(10, 1 << 9),
+		new LocalPerceptronPredictor(10, 1 << 10),
+		new LocalPerceptronPredictor(10, 1 << 11),
+		new LocalPerceptronPredictor(10, 1 << 12)
+	};
 
-   
-    json result = json::object(); // each result for a file
-    json arr = json::array();
-
+	json output = json::array();
+	json result_for_file = json::object();
+	
 	for (const auto & f : std::filesystem::directory_iterator(traces_path)) {
+
 		// Get file path
 		const std::string& file_path = f.path();
 
@@ -40,8 +50,6 @@ int main(int argc, char * argv[])
 		fstat(fd, &sb);
 		const char * data = static_cast<const char*>(mmap(NULL, sb.st_size, PROT_READ, MAP_PRIVATE, fd, 0u));
 
-		// Run loop
-
 		// File reading loop
 		while (counter < sb.st_size)
 		{
@@ -50,17 +58,28 @@ int main(int argc, char * argv[])
 			bool taken = *(data + counter + 40) == '1'; // string to unsigned long, from base 10
 
 			if (is_conditional_branch) {
-			    always_taken -> predict(program_counter, taken);	
+				for (BranchPredictor * bp : predictors)
+				{
+					bp -> predict(program_counter, taken);
+				}
 			}
 			counter += lineLength;
 		}
 
+		result_for_file["file_name"] = file_path.substr(file_path.find_last_of("/") + 1);
+		json predictor_results_list = json::array();
 		// print results
-        result["file_name"] = file_path.substr(file_path.find_last_of("/") + 1);
-		result["missprediction_rate"] = always_taken -> get_missprediction_rate();
-        arr.push_back(result);
+		for (BranchPredictor * bp : predictors)
+		{
+			json result_for_predictor = json::object();
+			result_for_predictor["name"] = bp -> get_name();
+			result_for_predictor["missprediction_rate"] = bp -> get_missprediction_rate();
+			predictor_results_list.push_back(result_for_predictor);
+		}
+
+		result_for_file["results"] = predictor_results_list;
+		output.push_back(result_for_file);
 	}
 
-	std::cout << arr.dump(2);
-
+	std::cout << output.dump(2) << '\n';
 }

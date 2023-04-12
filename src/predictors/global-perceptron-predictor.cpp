@@ -60,7 +60,7 @@ public:
 
 
     std::string get_name() const override {
-        return "Global Perceptron Predictor";
+        return "Global Perceptron Predictor. Table Size: " + std::to_string(_table_entries) + " , History Length (Bits): " + std::to_string(_history_length);
     }
 
 

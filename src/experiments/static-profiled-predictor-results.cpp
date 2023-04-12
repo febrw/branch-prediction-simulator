@@ -20,18 +20,14 @@ int main(int argc, char * argv[])
 
 	// Setup file path, predictor, and JSON output structures
     std::string traces_path("/cs/studres/CS4202/Coursework/P2-BranchPredictor/branch_traces/");
-    int num_files{0};
-    for (const auto & f : std::filesystem::directory_iterator(traces_path)) {++num_files;}
     
-    std::vector<StaticProfiledPredictor*> static_profiled_predictors;
+    
     json output = json::array(); // global output object
     json file_summary = json::object(); // each result for a file
 
 	for (const auto & f : std::filesystem::directory_iterator(traces_path)) {
         const std::string& file_path = f.path();
-        StaticProfiledPredictor * spp = new StaticProfiledPredictor(file_path);
-        static_profiled_predictors.push_back(spp);
-
+        StaticProfiledPredictor spp(file_path);
 		// File reading setup
 		struct stat sb;
 		uintmax_t counter = 0;
@@ -53,19 +49,16 @@ int main(int argc, char * argv[])
             uint64_t target_address = hex2ull(data + counter + 17);
 
             uint64_t const info = is_direct_branch ? (program_counter < target_address ? 1 : 2) : 0;
-            spp -> predict(info, taken);
+            spp.predict(info, taken);
 			counter += lineLength;
 		}
 
         // Format results
         file_summary["file_name"] = file_path.substr(file_path.find_last_of("/") + 1);
-        for (StaticProfiledPredictor * bp : static_profiled_predictors) {
-            json result = json::object();
-            file_summary["proportion_forward"] = bp -> get_forward_proportion();
-            file_summary["proportion_forward_taken"] = bp -> get_forward_taken_proportion();
-            file_summary["proportion_backward_taken"] = bp -> get_backward_taken_proportion();
-            file_summary["missprediction_rate"] = bp -> get_missprediction_rate();
-        }
+        file_summary["proportion_forward"] = spp . get_forward_proportion();
+        file_summary["proportion_forward_taken"] = spp . get_forward_taken_proportion();
+        file_summary["proportion_backward_taken"] = spp . get_backward_taken_proportion();
+        file_summary["missprediction_rate"] = spp . get_missprediction_rate();
         output.push_back(file_summary);
 	}
 

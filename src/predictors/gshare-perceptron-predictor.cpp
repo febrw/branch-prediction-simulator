@@ -85,7 +85,7 @@ public:
 
 
     std::string get_name() const override {
-        return "GShare Perceptron Predictor";
+        return "GShare Perceptron Predictor. Table Size: " + std::to_string(_table_entries) + " , History Length (Bits): " + std::to_string(_history_length);
     }
 
 

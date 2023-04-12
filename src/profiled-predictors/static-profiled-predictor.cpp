@@ -20,8 +20,8 @@ class StaticProfiledPredictor : public BranchPredictor
 {
 private:
 
-    double _forward_branches, _backward_branches;
-    double _forward_taken, _backward_taken;
+    uint64_t _forward_branches, _backward_branches;
+    uint64_t _forward_taken, _backward_taken;
     bool _forward_pred, _backward_pred, _unk_pred;    
 
 public:
@@ -51,7 +51,10 @@ public:
 			uint64_t program_counter = hex2ull(data + counter);
             uint64_t target_address = hex2ull(data + counter + 17);
 
-			if (!(is_conditional_branch && is_direct_branch)) {counter += lineLength;}
+			if (!(is_conditional_branch && is_direct_branch)) {
+                counter += lineLength;
+                continue;
+            }
                 
             if (program_counter < target_address) {
                 ++_forward_branches;

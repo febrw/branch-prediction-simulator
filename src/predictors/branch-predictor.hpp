@@ -42,8 +42,9 @@ public:
 
     virtual std::string get_name() const = 0;
 
-
-    void reset_stats()
+    // can be used for profiled predictors, to retain data structures, histories, weights etc
+    // but restart prediction statistics
+    void reset_stats() 
     {
         _misspredictions = 0;
         _total_predictions = 0;

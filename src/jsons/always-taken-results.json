@@ -1,0 +1,34 @@
+[
+  {
+    "file_name": "bwaves.out",
+    "missprediction_rate": 60.37152633338062
+  },
+  {
+    "file_name": "exchange2.out",
+    "missprediction_rate": 49.98477405696755
+  },
+  {
+    "file_name": "cactusbssn.out",
+    "missprediction_rate": 55.356101019438356
+  },
+  {
+    "file_name": "wrf.out",
+    "missprediction_rate": 43.968515736742276
+  },
+  {
+    "file_name": "povray.out",
+    "missprediction_rate": 48.129487868362844
+  },
+  {
+    "file_name": "gcc.out",
+    "missprediction_rate": 50.106662996036775
+  },
+  {
+    "file_name": "xz.out",
+    "missprediction_rate": 48.6340720065438
+  },
+  {
+    "file_name": "leela.out",
+    "missprediction_rate": 49.85077015247019
+  }
+]

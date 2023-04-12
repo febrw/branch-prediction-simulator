@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import json
 
 
-f = open("../jsons/two-bit-table-results.json")
+f = open("../jsons/gshare-table-sizes.json")
 
 
 d = json.loads(f.read())
@@ -48,7 +48,7 @@ ax.set_ylabel('Missprediction Rate (%)', fontsize=16)
 
 # Add a legend
 ax.legend(title='Table Size', fontsize=14)
-plt.title("Bimodal Predictor of varying table sizes", fontsize=26)
+plt.title("GShare Predictor of varying table sizes", fontsize=26)
 # Show the plot
 
 plt.show()

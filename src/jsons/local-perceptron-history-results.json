@@ -1,0 +1,170 @@
+[
+  {
+    "file_name": "bwaves.out",
+    "results": [
+      {
+        "missprediction_rate": 0.5782057674555252,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 6"
+      },
+      {
+        "missprediction_rate": 0.5790364286465316,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 8"
+      },
+      {
+        "missprediction_rate": 0.580457296473253,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 10"
+      },
+      {
+        "missprediction_rate": 0.5809709948413755,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      }
+    ]
+  },
+  {
+    "file_name": "exchange2.out",
+    "results": [
+      {
+        "missprediction_rate": 8.415638537817644,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 6"
+      },
+      {
+        "missprediction_rate": 3.618968374823318,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 8"
+      },
+      {
+        "missprediction_rate": 3.0578836235357088,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 10"
+      },
+      {
+        "missprediction_rate": 3.033395568384498,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      }
+    ]
+  },
+  {
+    "file_name": "cactusbssn.out",
+    "results": [
+      {
+        "missprediction_rate": 8.017008691857134,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 6"
+      },
+      {
+        "missprediction_rate": 4.677055201702783,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 8"
+      },
+      {
+        "missprediction_rate": 4.234822999595675,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 10"
+      },
+      {
+        "missprediction_rate": 4.176212040936413,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      }
+    ]
+  },
+  {
+    "file_name": "wrf.out",
+    "results": [
+      {
+        "missprediction_rate": 6.326972047993751,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 6"
+      },
+      {
+        "missprediction_rate": 3.938087133070921,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 8"
+      },
+      {
+        "missprediction_rate": 3.6111614661604814,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 10"
+      },
+      {
+        "missprediction_rate": 3.5651766906966404,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      }
+    ]
+  },
+  {
+    "file_name": "povray.out",
+    "results": [
+      {
+        "missprediction_rate": 6.31875945863497,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 6"
+      },
+      {
+        "missprediction_rate": 4.33027880598463,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 8"
+      },
+      {
+        "missprediction_rate": 4.018164933839951,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 10"
+      },
+      {
+        "missprediction_rate": 3.9636330817146286,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      }
+    ]
+  },
+  {
+    "file_name": "gcc.out",
+    "results": [
+      {
+        "missprediction_rate": 6.245905202046983,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 6"
+      },
+      {
+        "missprediction_rate": 4.545457489326809,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 8"
+      },
+      {
+        "missprediction_rate": 4.257827750531297,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 10"
+      },
+      {
+        "missprediction_rate": 4.193399942172216,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      }
+    ]
+  },
+  {
+    "file_name": "xz.out",
+    "results": [
+      {
+        "missprediction_rate": 7.94616245032916,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 6"
+      },
+      {
+        "missprediction_rate": 6.510911346006737,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 8"
+      },
+      {
+        "missprediction_rate": 6.264964895150064,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 10"
+      },
+      {
+        "missprediction_rate": 6.21024565113144,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      }
+    ]
+  },
+  {
+    "file_name": "leela.out",
+    "results": [
+      {
+        "missprediction_rate": 8.487742827769935,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 6"
+      },
+      {
+        "missprediction_rate": 6.662840603409154,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 8"
+      },
+      {
+        "missprediction_rate": 6.418578683419519,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 10"
+      },
+      {
+        "missprediction_rate": 6.3671522566270315,
+        "name": "Local Perceptron Predictor. Table Size: 4096 , History Length (Bits): 12"
+      }
+    ]
+  }
+]
